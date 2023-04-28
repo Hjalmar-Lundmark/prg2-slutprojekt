@@ -1,6 +1,6 @@
-# Slutprojekt - Databas?
+# Slutprojekt - Databas
 
-Min ide: Fortsättning på databas-login java uppgiften?? och lägga in något OOP
+Min ide: Fortsättning på databas-login java uppgiften
 
 GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-slutprojekt?node-id=0%3A1&t=55ccjZPlMn5sCcDZ-1)
 
