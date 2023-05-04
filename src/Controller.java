@@ -15,6 +15,7 @@ public class Controller {
         frame.setVisible(true);
 
         theView.addPost("Test");
+        theView.addPost("Test");
 
     }
 

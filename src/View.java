@@ -13,7 +13,7 @@ public class View {
     }
 
     public void addPost(String in) {
-        textArea1.append(in);
+        textArea1.append(in + "\n");
     }
 
     public JButton getRegisterButton() {

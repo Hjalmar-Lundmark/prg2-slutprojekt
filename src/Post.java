@@ -1,14 +1,17 @@
+import java.sql.Timestamp;
+
 public class Post {
     private String Title;
     private String Content;
     private String Author;
     private int id;
-    //private time-thingy createdAt;
+    private Timestamp createdAt;
 
-    public Post(String title, String content, String author, int id) {
+    public Post(String title, String content, String author, Timestamp c, int id) {
         Title = title;
         Content = content;
         Author = author;
+        createdAt = c;
         this.id = id;
     }
 
@@ -16,7 +19,8 @@ public class Post {
     public String toString() {
         return getTitle() + "\n" +
                 getAuthor() + "\n" +
-                getContent() + "\n";
+                getContent() + "\n" +
+                "Created at" + getCreatedAt() + "\n";
     }
 
     public String getTitle() {
@@ -49,5 +53,13 @@ public class Post {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 }
