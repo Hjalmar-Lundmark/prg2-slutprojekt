@@ -20,7 +20,7 @@ public class Model {
         }
     }
 
-    public ArrayList<Post> getPosts() { // returns ArrayList of posts
+    public ArrayList<Post> getPosts() { // returns ArrayList of posts, in the format of the class Post
         ArrayList<Post> out = new ArrayList();
         try {
             stmt = conn.createStatement();
@@ -35,6 +35,7 @@ public class Model {
                         result.getTimestamp("createdAt"),
                         result.getInt("id")));
             }
+            System.out.println(out.get(0));
 
             stmt.close();
             conn.close();
@@ -42,5 +43,12 @@ public class Model {
             e.printStackTrace();
         }
         return out;
+    }
+
+    // testing
+    public static void main(String[] args) {
+        Model m = new Model();
+        m.connect();
+        m.getPosts();
     }
 }

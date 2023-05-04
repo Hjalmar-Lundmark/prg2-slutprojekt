@@ -18,9 +18,9 @@ public class Post {
     @Override
     public String toString() {
         return getTitle() + "\n" +
-                getAuthor() + "\n" +
+                "Made by: " + getAuthor() + "\n" +
                 getContent() + "\n" +
-                "Created at" + getCreatedAt() + "\n";
+                "Created at " + getCreatedAt() + "\n";
     }
 
     public String getTitle() {
