@@ -18,4 +18,7 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 
 28/4: Skissat i Figma, uppdaterat drawio, börjat sätta upp projektet och skapa kod, 
 
-4/5: 
+4/5: Skapat MVC, gjort en prototyp layout i view där knappar inte fungerar än, kopplat upp MVC så view syns,
+ skapad kod i Model för att koppla upp till databas och sedan visa raderna där ifrån i formen av klassen Post.
+![View](./images/ss1.jpg "View")
+

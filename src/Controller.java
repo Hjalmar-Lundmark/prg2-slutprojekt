@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Controller {
     View theView;
@@ -14,8 +15,16 @@ public class Controller {
         frame.setSize(600, 600);
         frame.setVisible(true);
 
-        theView.addPost("Test");
-        theView.addPost("Test");
+
+
+        theModel.connect();
+        ArrayList<Post> posts = theModel.getPosts();
+        for (int i = 0; i<posts.toArray().length; i++) {
+            theView.addPost(posts.get(i).toString());
+        }
+
+
+
 
     }
 

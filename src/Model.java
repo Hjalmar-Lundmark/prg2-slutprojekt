@@ -21,7 +21,7 @@ public class Model {
     }
 
     public ArrayList<Post> getPosts() { // returns ArrayList of posts, in the format of the class Post
-        ArrayList<Post> out = new ArrayList();
+        ArrayList<Post> out = new ArrayList<>();
         try {
             stmt = conn.createStatement();
             //SQLQuery = "SELECT * FROM hl21forum ORDER BY id DESC"; //Old
