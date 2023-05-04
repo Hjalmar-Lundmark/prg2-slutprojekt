@@ -6,7 +6,7 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 |   | Torsdag  | Fredag  |
 |---|---|---|
 | v17  | Komma på ide, planering  | planering, figma, refakturisering  |
-| v18  | Kodning  | Kodning  |
+| v18  | refakturisering, kodning  | Kodning  |
 | v19  | ^  | ^  |
 | v20  | -  | -  |
 | v21  | ^  | ^  |
@@ -17,3 +17,5 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 27/4: Planerat ut min ide, skapat och fyllt i drawio, 
 
 28/4: Skissat i Figma, uppdaterat drawio, börjat sätta upp projektet och skapa kod, 
+
+4/5: 
