@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Model {
     private Connection conn = null;
@@ -65,10 +66,43 @@ public class Model {
         return out;
     }
 
-    public void login(String u, String pwd) {
+    public void login(String user, String pwd) {
+        error = "";
+        if (user.length() < 2) {
+            error += "Username is Required \n";
+        }
+        if (pwd.length() < 2) {
+            error += "Password is Required \n";
+        }
 
+        if (error.length() < 5) { // stops the login if error is found
+            try {
+                stmt = conn.createStatement();
+                SQLQuery = "SELECT * FROM hl21users WHERE name='" + user + "'";
+                result = stmt.executeQuery(SQLQuery);
 
+                //checks if user exist in the db
+                if (Objects.equals(user, result.getString("name"))) {
+                    //checks if wrote password and pwd in db is the same
+                    if (BCrypt.checkpw(pwd, result.getString("password"))) {
+                        loggedIn = true;
+                        username = user;
+                        System.out.println("Login worked");
+                    } else {
+                        System.out.println("Login failed - password");
+                    }
+                } else {
+                    System.out.println("Login failed - username");
+                }
 
+                stmt.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println(error);
+        }
     }
 
     // testing

@@ -81,7 +81,7 @@ public class Controller {
                 // code for login
 
 
-                // if success, set loggedIn = true
+                // if success, change stuff
 
 
                 loginFrame.setVisible(false);
