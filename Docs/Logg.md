@@ -22,5 +22,5 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
  skapad kod i Model för att koppla upp till databas och sedan visa raderna där ifrån i formen av klassen Post.
 ![View](./images/ss1.jpg "View")
 
-5/5: Idag har jag skapad 'under'-fönster som aktiveras av knappar, börjat på login() metod och 
+5/5: Idag har jag skapat 'under'-fönster som aktiveras av knappar, börjat på login() metod och 
 ändrat utseende lite för hur posts syns. 
