@@ -11,6 +11,28 @@ public class Model {
     private String SQLQuery;
     private ResultSet result;
 
+    // info for login and loggedIn
+    private boolean loggedIn = false;
+    private String username = "";
+    private String error = "";
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+
     public void connect() {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://" + db + ":3306/" + host + "? "+
@@ -41,6 +63,12 @@ public class Model {
             e.printStackTrace();
         }
         return out;
+    }
+
+    public void login(String u, String pwd) {
+
+
+
     }
 
     // testing

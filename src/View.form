@@ -11,7 +11,6 @@
       <hspacer id="435e9">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="50" height="-1"/>
             <preferred-size width="50" height="-1"/>
           </grid>
         </constraints>
@@ -19,7 +18,6 @@
       <hspacer id="593c0">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="50" height="-1"/>
             <preferred-size width="50" height="-1"/>
           </grid>
         </constraints>
@@ -71,7 +69,10 @@
           </component>
           <hspacer id="7e732">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="50" height="-1"/>
+                <preferred-size width="50" height="-1"/>
+              </grid>
             </constraints>
           </hspacer>
           <component id="92416" class="javax.swing.JButton" binding="loginButton" default-binding="true">

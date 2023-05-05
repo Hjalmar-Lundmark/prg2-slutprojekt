@@ -47,8 +47,11 @@ public class Controller {
 
         theModel.connect();
         ArrayList<Post> posts = theModel.getPosts();
-        for (int i = 0; i<posts.toArray().length; i++) {
+        /*for (int i = 0; i<posts.toArray().length; i++) {
             theView.addPost(posts.get(i).toString());
+        }*/
+        for (Post i : posts) { //cleaner code, or something
+            theView.addPost(i.toString());
         }
 
         // Opens other views
@@ -71,7 +74,19 @@ public class Controller {
             }
         });
 
+        loginPage.getLoginButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                theModel.connect();
+                // code for login
 
+
+                // if success, set loggedIn = true
+
+
+                loginFrame.setVisible(false);
+            }
+        });
 
 
     }
