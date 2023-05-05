@@ -24,7 +24,6 @@ public class Model {
         ArrayList<Post> out = new ArrayList<>();
         try {
             stmt = conn.createStatement();
-            //SQLQuery = "SELECT * FROM hl21forum ORDER BY id DESC"; //Old
             SQLQuery = "SELECT hl21forum.*, hl21users.name FROM hl21forum JOIN hl21users WHERE hl21forum.authorId = hl21users.id ORDER BY hl21forum.id DESC";
             result = stmt.executeQuery(SQLQuery);
 
