@@ -34,7 +34,6 @@ public class Model {
                         result.getTimestamp("createdAt"),
                         result.getInt("id")));
             }
-            System.out.println(out.get(0));
 
             stmt.close();
             conn.close();
