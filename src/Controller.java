@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Controller {
@@ -22,21 +24,25 @@ public class Controller {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 600);
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
 
         JFrame loginFrame = new JFrame("Login");
         loginFrame.setContentPane(loginPage.getRoot());
         loginFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         loginFrame.pack();
+        loginFrame.setLocationRelativeTo(null);
 
         JFrame registerFrame = new JFrame("Register account");
         registerFrame.setContentPane(registerPage.getRoot());
         registerFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         registerFrame.pack();
+        registerFrame.setLocationRelativeTo(null);
 
-        JFrame postFrame = new JFrame("Create new post");
-        postFrame.setContentPane(createPostPage.getRoot());
-        postFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        postFrame.pack();
+        JFrame createPostFrame = new JFrame("Create new post");
+        createPostFrame.setContentPane(createPostPage.getRoot());
+        createPostFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        createPostFrame.pack();
+        createPostFrame.setLocationRelativeTo(null);
 
 
         theModel.connect();
@@ -45,7 +51,25 @@ public class Controller {
             theView.addPost(posts.get(i).toString());
         }
 
-
+        // Opens other views
+        theView.getLoginButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loginFrame.setVisible(true);
+            }
+        });
+        theView.getRegisterButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                registerFrame.setVisible(true);
+            }
+        });
+        theView.getCreatePostButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                createPostFrame.setVisible(true);
+            }
+        });
 
 
 
