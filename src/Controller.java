@@ -79,12 +79,35 @@ public class Controller {
             public void actionPerformed(ActionEvent e) {
                 theModel.connect();
                 // code for login
+                theModel.login(loginPage.getTextField1(), loginPage.getPasswordField1());
+                if (theModel.isLoggedIn()) {
+                    System.out.println("Login successful - cont");
+                    theView.changeUserLabel(theModel.getUsername());
+                    loginFrame.setVisible(false);
+                    theView.getLoginButton().setEnabled(false);
+                    theView.getRegisterButton().setEnabled(false);
+                    theView.getCreatePostButton().setEnabled(true);
+                } else {
+                    System.out.println("Login failed - cont");
+                }
+            }
+        });
+        registerPage.getRegisterButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                theModel.connect();
 
-
-                // if success, change stuff
-
-
-                loginFrame.setVisible(false);
+                theModel.register(registerPage.getTextField1(), registerPage.getPasswordField1(), registerPage.getPasswordField2());
+                if (theModel.isLoggedIn()) {
+                    System.out.println("reg successful - cont");
+                    theView.changeUserLabel(theModel.getUsername());
+                    loginFrame.setVisible(false);
+                    theView.getLoginButton().setEnabled(false);
+                    theView.getRegisterButton().setEnabled(false);
+                    theView.getCreatePostButton().setEnabled(true);
+                } else {
+                    System.out.println("Reg failed - cont");
+                }
             }
         });
 

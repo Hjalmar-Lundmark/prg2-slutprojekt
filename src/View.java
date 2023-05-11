@@ -28,7 +28,7 @@ public class View {
         return createPostButton;
     }
 
-    public void changeLabel(String in) {
+    public void changeUserLabel(String in) {
         labelLoggedIn.setText(in);
     }
 

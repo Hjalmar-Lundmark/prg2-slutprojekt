@@ -80,10 +80,13 @@ public class Model {
                 stmt = conn.createStatement();
                 SQLQuery = "SELECT * FROM hl21users WHERE name='" + user + "'";
                 result = stmt.executeQuery(SQLQuery);
+                result.next();
 
                 //checks if user exist in the db
                 if (Objects.equals(user, result.getString("name"))) {
                     //checks if wrote password and pwd in db is the same
+                    System.out.println(pwd);
+                    System.out.println(result.getString("password"));
                     if (BCrypt.checkpw(pwd, result.getString("password"))) {
                         loggedIn = true;
                         username = user;
@@ -99,6 +102,43 @@ public class Model {
                 conn.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+            }
+        } else {
+            System.out.println(error);
+        }
+    }
+
+    //WIP
+    public void register(String u, String pwd, String pwdConf) {
+        error = "";
+        if (user.length() < 2) {
+            error += "Username is Required \n";
+        }
+        if (pwd.length() < 8) {
+            error += "Password needs atleast 8 characters \n";
+        }
+        if (!pwd.equals(pwdConf)) {
+            error += "Passwords does not match \n";
+        }
+
+        if (error.length() < 5) { // stops the login if error is found
+            try {
+                // check if username already exists
+
+
+                String hashedPwd = BCrypt.hashpw(pwd, BCrypt.gensalt());
+                stmt = conn.createStatement();
+                SQLQuery = "INSERT INTO hl21users (name, password) VALUES (" + u + "," + hashedPwd + ")";
+                stmt.executeQuery(SQLQuery);
+
+                loggedIn = true;
+                username = u;
+
+                stmt.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("Insert failed?");
             }
         } else {
             System.out.println(error);

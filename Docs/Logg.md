@@ -9,8 +9,8 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 | v18  | refakturisering, kodning  | Kodning  |
 | v19  | ^  | ^  |
 | v20  | -  | -  |
-| v21  | ^  | ^  |
-| v22  | Avslutande?  |   |
+| v21  | ^  | Bli klar kodmässigt  |
+| v22  | skriva PM  | visa upp  |
 
 ## Loggbok
 
@@ -24,3 +24,6 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 
 5/5: Idag har jag skapat 'under'-fönster som aktiveras av knappar, börjat på login() metod och 
 ändrat utseende lite för hur posts syns. 
+
+11/5: Skrev klart(?) login() metod men får error av hur lösenorden i databasen är krypterade. 
+Därför började jag med register() metod för att skapa konto genom detta Java forum och logga in på dem. 
