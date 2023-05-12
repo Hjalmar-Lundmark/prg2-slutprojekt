@@ -16,6 +16,10 @@ public class View {
         textArea1.append(in + "\n");
     }
 
+    public void emptyFeed() {
+        textArea1.setText("");
+    }
+
     public JButton getRegisterButton() {
         return registerButton;
     }

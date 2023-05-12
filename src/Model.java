@@ -15,7 +15,16 @@ public class Model {
     // info for login and loggedIn
     private boolean loggedIn = false;
     private String username = "";
+    private int userId;
     private String error = "";
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public boolean isLoggedIn() {
         return loggedIn;
@@ -69,10 +78,10 @@ public class Model {
     public void login(String user, String pwd) {
         error = "";
         if (user.length() < 2) {
-            error += "Username is Required \n";
+            error += "Username is required \n";
         }
         if (pwd.length() < 2) {
-            error += "Password is Required \n";
+            error += "Password is required \n";
         }
 
         if (error.length() < 5) { // stops the login if error is found
@@ -90,6 +99,7 @@ public class Model {
                     if (BCrypt.checkpw(pwd, result.getString("password"))) {
                         loggedIn = true;
                         username = user;
+                        userId = result.getInt("id");
                         System.out.println("Login worked");
                     } else {
                         System.out.println("Login failed - password");
@@ -112,7 +122,7 @@ public class Model {
     public void register(String u, String pwd, String pwdConf) {
         error = "";
         if (user.length() < 2) {
-            error += "Username is Required \n";
+            error += "Username is required \n";
         }
         if (pwd.length() < 8) {
             error += "Password needs atleast 8 characters \n";
@@ -124,15 +134,23 @@ public class Model {
         if (error.length() < 5) { // stops the login if error is found
             try {
                 // check if username already exists
-
-
-                String hashedPwd = BCrypt.hashpw(pwd, BCrypt.gensalt());
                 stmt = conn.createStatement();
-                SQLQuery = "INSERT INTO hl21users (name, password) VALUES (" + u + "," + hashedPwd + ")";
-                stmt.executeQuery(SQLQuery);
+                SQLQuery = "SELECT * FROM hl21users WHERE name=" + u + " ";
+                result = stmt.executeQuery(SQLQuery);
 
-                loggedIn = true;
-                username = u;
+                System.out.println(result.toString()); // error ???
+                if (result.toString() != "") { // if username is not taken, create acc
+                    String hashedPwd = BCrypt.hashpw(pwd, BCrypt.gensalt());
+                    SQLQuery = "INSERT INTO hl21users (name, password) VALUES (" + u + "," + hashedPwd + ")";
+                    stmt.executeQuery(SQLQuery);
+
+                    loggedIn = true;
+                    username = u;
+                    // another stmt for getting uId???
+
+                } else {
+                    error += "Username is already taken \n";
+                }
 
                 stmt.close();
                 conn.close();
@@ -143,6 +161,43 @@ public class Model {
         } else {
             System.out.println(error);
         }
+    }
+
+    public void createNewPost(String title, String content, int uId) {
+        error = "";
+        if (title.length() < 2) {
+            error += "Title is required \n";
+        }
+        if (content.length() < 2) {
+            error += "Content is required \n";
+        }
+
+        if (error.length() < 5) {
+            try {
+                // sanitize data?
+
+
+                stmt = conn.createStatement();
+                SQLQuery = "INSERT INTO hl21forum (title, content, userId) VALUES (" + title + ", " + content + ", " + uId + ")";
+                result = stmt.executeQuery(SQLQuery);
+
+
+                stmt.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("Insert failed");
+            }
+
+        } else {
+            System.out.println(error);
+        }
+    }
+
+    public void logout() { //move to controller
+        username = "";
+        userId = 0;
+        loggedIn = false;
     }
 
     // testing

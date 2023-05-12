@@ -27,3 +27,6 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 
 11/5: Skrev klart(?) login() metod men får error av hur lösenorden i databasen är krypterade. 
 Därför började jag med register() metod för att skapa konto genom detta Java forum och logga in på dem. 
+
+12/5: Inget internet. Jobbade på och skapade grund för att skapa post i forumet men programmet går 
+inte att köra eller testa idag. Små ändringar över hela projektet. 

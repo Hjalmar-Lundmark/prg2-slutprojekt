@@ -14,12 +14,12 @@ public class createPost {
         return sendButton;
     }
 
-    public JTextField getTextField1() {
-        return textField1;
+    public String getTextField1() {
+        return textField1.getText();
     }
 
-    public JTextArea getTextArea1() {
-        return textArea1;
+    public String getTextArea1() {
+        return textArea1.getText();
     }
 
     public static void main(String[] args) {

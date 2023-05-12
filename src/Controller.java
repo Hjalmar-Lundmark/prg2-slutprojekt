@@ -29,30 +29,24 @@ public class Controller {
         JFrame loginFrame = new JFrame("Login");
         loginFrame.setContentPane(loginPage.getRoot());
         loginFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        loginFrame.pack();
+        loginFrame.setSize(200, 200);
         loginFrame.setLocationRelativeTo(null);
 
         JFrame registerFrame = new JFrame("Register account");
         registerFrame.setContentPane(registerPage.getRoot());
         registerFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        registerFrame.pack();
+        registerFrame.setSize(200, 200);
         registerFrame.setLocationRelativeTo(null);
 
         JFrame createPostFrame = new JFrame("Create new post");
         createPostFrame.setContentPane(createPostPage.getRoot());
         createPostFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        createPostFrame.pack();
+        createPostFrame.setSize(200, 200);
         createPostFrame.setLocationRelativeTo(null);
 
 
         theModel.connect();
-        ArrayList<Post> posts = theModel.getPosts();
-        /*for (int i = 0; i<posts.toArray().length; i++) {
-            theView.addPost(posts.get(i).toString());
-        }*/
-        for (Post i : posts) { //cleaner code, or something
-            theView.addPost(i.toString());
-        }
+        getPosts(theModel.getPosts());
 
         // Opens other views
         theView.getLoginButton().addActionListener(new ActionListener() {
@@ -101,17 +95,43 @@ public class Controller {
                 if (theModel.isLoggedIn()) {
                     System.out.println("reg successful - cont");
                     theView.changeUserLabel(theModel.getUsername());
-                    loginFrame.setVisible(false);
+                    registerFrame.setVisible(false);
                     theView.getLoginButton().setEnabled(false);
                     theView.getRegisterButton().setEnabled(false);
+                    theView.getLoginButton().setVisible(false);
+                    theView.getRegisterButton().setVisible(false);
                     theView.getCreatePostButton().setEnabled(true);
                 } else {
                     System.out.println("Reg failed - cont");
                 }
             }
         });
+        createPostPage.getSendButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                theModel.connect();
+                theModel.createNewPost(createPostPage.getTextField1(), createPostPage.getTextArea1(), theModel.getUserId());
 
+                // if success ???
+                createPostFrame.setVisible(false);
+                //refresh posts
+                theModel.connect(); // do I need this here ???
+                getPosts(theModel.getPosts());
 
+            }
+        });
+        // another for logout
+
+    }
+
+    public void getPosts(ArrayList<Post> posts) {
+        theView.emptyFeed();
+        /*for (int i = 0; i<posts.toArray().length; i++) {
+            theView.addPost(posts.get(i).toString());
+        }*/
+        for (Post i : posts) { //cleaner code, or something
+            theView.addPost(i.toString());
+        }
     }
 
     public static void main(String[] args) {
