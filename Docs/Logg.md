@@ -30,3 +30,7 @@ Därför började jag med register() metod för att skapa konto genom detta Java
 
 12/5: Inget internet. Jobbade på och skapade grund för att skapa post i forumet men programmet går 
 inte att köra eller testa idag. Små ändringar över hela projektet. 
+
+~22/5: Fixade dumheter efter att ha vilat upp hjärnan, som ```stmt.executeUpdate()``` istället för ```stmt.executeQuery()``` 
+INSERT-queries, allmänna ställen där jag har skrivit fel i SQL-queries, med mera. 
+Att skapa konto samt logga in fungerar nu som det ska. 

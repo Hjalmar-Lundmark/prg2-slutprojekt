@@ -94,8 +94,6 @@ public class Model {
                 //checks if user exist in the db
                 if (Objects.equals(user, result.getString("name"))) {
                     //checks if wrote password and pwd in db is the same
-                    System.out.println(pwd);
-                    System.out.println(result.getString("password"));
                     if (BCrypt.checkpw(pwd, result.getString("password"))) {
                         loggedIn = true;
                         username = user;
@@ -135,14 +133,13 @@ public class Model {
             try {
                 // check if username already exists
                 stmt = conn.createStatement();
-                SQLQuery = "SELECT * FROM hl21users WHERE name=" + u + " ";
+                SQLQuery = "SELECT * FROM hl21users WHERE name='" + u + "' ";
                 result = stmt.executeQuery(SQLQuery);
 
-                System.out.println(result.toString()); // error ???
                 if (result.toString() != "") { // if username is not taken, create acc
                     String hashedPwd = BCrypt.hashpw(pwd, BCrypt.gensalt());
-                    SQLQuery = "INSERT INTO hl21users (name, password) VALUES (" + u + "," + hashedPwd + ")";
-                    stmt.executeQuery(SQLQuery);
+                    SQLQuery = "INSERT INTO hl21users (name, password) VALUES ('" + u + "','" + hashedPwd + "')";
+                    stmt.executeUpdate(SQLQuery);
 
                     loggedIn = true;
                     username = u;
@@ -179,8 +176,8 @@ public class Model {
 
 
                 stmt = conn.createStatement();
-                SQLQuery = "INSERT INTO hl21forum (title, content, userId) VALUES (" + title + ", " + content + ", " + uId + ")";
-                result = stmt.executeQuery(SQLQuery);
+                SQLQuery = "INSERT INTO hl21forum (title, content, userId) VALUES ('" + title + "', '" + content + "', '" + uId + "')";
+                stmt.executeUpdate(SQLQuery);
 
 
                 stmt.close();

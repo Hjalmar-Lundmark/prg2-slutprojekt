@@ -29,19 +29,19 @@ public class Controller {
         JFrame loginFrame = new JFrame("Login");
         loginFrame.setContentPane(loginPage.getRoot());
         loginFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        loginFrame.setSize(200, 200);
+        loginFrame.setSize(400, 400);
         loginFrame.setLocationRelativeTo(null);
 
         JFrame registerFrame = new JFrame("Register account");
         registerFrame.setContentPane(registerPage.getRoot());
         registerFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        registerFrame.setSize(200, 200);
+        registerFrame.setSize(400, 400);
         registerFrame.setLocationRelativeTo(null);
 
         JFrame createPostFrame = new JFrame("Create new post");
         createPostFrame.setContentPane(createPostPage.getRoot());
         createPostFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        createPostFrame.setSize(200, 200);
+        createPostFrame.setSize(400, 400);
         createPostFrame.setLocationRelativeTo(null);
 
 
