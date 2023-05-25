@@ -1,6 +1,7 @@
 # Planering
 GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-slutprojekt?node-id=0%3A1&t=55ccjZPlMn5sCcDZ-1)
 
+[ReadMe.md](../Readme.md)
 ## Tidsplanering
 
 |   | Torsdag  | Fredag  |
@@ -34,3 +35,5 @@ inte att köra eller testa idag. Små ändringar över hela projektet.
 ~22/5: Fixade dumheter efter att ha vilat upp hjärnan, som ```stmt.executeUpdate()``` istället för ```stmt.executeQuery()``` 
 INSERT-queries, allmänna ställen där jag har skrivit fel i SQL-queries, med mera. 
 Att skapa konto samt logga in fungerar nu som det ska. 
+
+25/5: 

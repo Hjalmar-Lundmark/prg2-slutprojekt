@@ -68,19 +68,23 @@ public class Controller {
             }
         });
 
+        // actions inside sub-windows
         loginPage.getLoginButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 theModel.connect();
-                // code for login
                 theModel.login(loginPage.getTextField1(), loginPage.getPasswordField1());
                 if (theModel.isLoggedIn()) {
                     System.out.println("Login successful - cont");
                     theView.changeUserLabel(theModel.getUsername());
                     loginFrame.setVisible(false);
-                    theView.getLoginButton().setEnabled(false);
-                    theView.getRegisterButton().setEnabled(false);
-                    theView.getCreatePostButton().setEnabled(true);
+                    loginPage.emptyPage();
+
+                    // Changes button layout
+                    theView.getLoginButton().setVisible(false);
+                    theView.getRegisterButton().setVisible(false);
+                    theView.getCreatePostButton().setVisible(true);
+                    theView.getLogoutButton().setVisible(true);
                 } else {
                     System.out.println("Login failed - cont");
                 }
@@ -90,17 +94,18 @@ public class Controller {
             @Override
             public void actionPerformed(ActionEvent e) {
                 theModel.connect();
-
                 theModel.register(registerPage.getTextField1(), registerPage.getPasswordField1(), registerPage.getPasswordField2());
                 if (theModel.isLoggedIn()) {
                     System.out.println("reg successful - cont");
                     theView.changeUserLabel(theModel.getUsername());
                     registerFrame.setVisible(false);
-                    theView.getLoginButton().setEnabled(false);
-                    theView.getRegisterButton().setEnabled(false);
+                    registerPage.emptyPage();
+
+                    // Changes button layout
                     theView.getLoginButton().setVisible(false);
                     theView.getRegisterButton().setVisible(false);
-                    theView.getCreatePostButton().setEnabled(true);
+                    theView.getCreatePostButton().setVisible(true);
+                    theView.getLogoutButton().setVisible(true);
                 } else {
                     System.out.println("Reg failed - cont");
                 }
@@ -110,17 +115,27 @@ public class Controller {
             @Override
             public void actionPerformed(ActionEvent e) {
                 theModel.connect();
-                theModel.createNewPost(createPostPage.getTextField1(), createPostPage.getTextArea1(), theModel.getUserId());
+                boolean success = theModel.createNewPost(createPostPage.getTextField1(), createPostPage.getTextArea1());
+                if (success) { // if a post is created this runs, else keeps the window opened
+                    createPostFrame.setVisible(false);
+                    createPostPage.emptyPage();
 
-                // if success ???
-                createPostFrame.setVisible(false);
-                //refresh posts
-                theModel.connect(); // do I need this here ???
-                getPosts(theModel.getPosts());
+                    //refresh posts
+                    theModel.connect(); // do I need this here ???
+                    getPosts(theModel.getPosts());
+                }
+            }
+        });
+
+        // logout
+        theView.getLogoutButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                theModel.setUsername(null);
+                theModel.setUserId(0);
 
             }
         });
-        // another for logout
 
     }
 

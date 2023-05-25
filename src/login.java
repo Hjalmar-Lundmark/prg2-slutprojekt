@@ -22,6 +22,11 @@ public class login {
         return loginButton;
     }
 
+    public void emptyPage() {
+        textField1.setText("");
+        passwordField1.setText("");
+    }
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Login");
         frame.setContentPane(new login().root);

@@ -116,7 +116,6 @@ public class Model {
         }
     }
 
-    //WIP
     public void register(String u, String pwd, String pwdConf) {
         error = "";
         if (user.length() < 2) {
@@ -160,8 +159,9 @@ public class Model {
         }
     }
 
-    public void createNewPost(String title, String content, int uId) {
+    public boolean createNewPost(String title, String content) {
         error = "";
+        boolean success = false;
         if (title.length() < 2) {
             error += "Title is required \n";
         }
@@ -176,9 +176,10 @@ public class Model {
 
 
                 stmt = conn.createStatement();
-                SQLQuery = "INSERT INTO hl21forum (title, content, userId) VALUES ('" + title + "', '" + content + "', '" + uId + "')";
+                SQLQuery = "INSERT INTO hl21forum (title, content, authorId) VALUES ('" + title + "', '" + content + "', '" + userId + "')";
                 stmt.executeUpdate(SQLQuery);
-
+                System.out.println("Create post worked?");
+                success = true;
 
                 stmt.close();
                 conn.close();
@@ -188,11 +189,17 @@ public class Model {
             }
 
         } else {
+            try {
+                throw new Exception(error); // this works
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             System.out.println(error);
         }
+        return success;
     }
 
-    public void logout() { //move to controller
+    public void logout() { //move to controller?
         username = "";
         userId = 0;
         loggedIn = false;

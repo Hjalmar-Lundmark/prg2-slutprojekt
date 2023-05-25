@@ -22,6 +22,11 @@ public class createPost {
         return textArea1.getText();
     }
 
+    public void emptyPage() {
+        textArea1.setText("");
+        textField1.setText("");
+    }
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Create new Post");
         frame.setContentPane(new createPost().root);

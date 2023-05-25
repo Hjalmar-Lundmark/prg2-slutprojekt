@@ -7,6 +7,7 @@ public class View {
     private JButton loginButton;
     private JButton createPostButton;
     private JLabel labelLoggedIn;
+    private JButton logoutButton;
 
     public JPanel getPanel() {
         return root;
@@ -30,6 +31,10 @@ public class View {
 
     public JButton getCreatePostButton() {
         return createPostButton;
+    }
+
+    public JButton getLogoutButton() {
+        return logoutButton;
     }
 
     public void changeUserLabel(String in) {

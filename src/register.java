@@ -27,6 +27,12 @@ public class register {
         return registerButton;
     }
 
+    public void emptyPage() {
+        textField1.setText("");
+        passwordField1.setText("");
+        passwordField2.setText("");
+    }
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Register account");
         frame.setContentPane(new register().root);
