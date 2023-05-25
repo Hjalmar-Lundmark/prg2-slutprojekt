@@ -189,20 +189,9 @@ public class Model {
             }
 
         } else {
-            try {
-                throw new Exception(error); // this works
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             System.out.println(error);
         }
         return success;
-    }
-
-    public void logout() { //move to controller?
-        username = "";
-        userId = 0;
-        loggedIn = false;
     }
 
     // testing

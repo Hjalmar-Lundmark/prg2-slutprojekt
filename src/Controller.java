@@ -133,7 +133,14 @@ public class Controller {
             public void actionPerformed(ActionEvent e) {
                 theModel.setUsername(null);
                 theModel.setUserId(0);
+                theModel.setLoggedIn(false);
 
+                theView.changeUserLabel("Logged out");
+
+                theView.getLogoutButton().setVisible(false);
+                theView.getCreatePostButton().setVisible(false);
+                theView.getLoginButton().setVisible(true);
+                theView.getRegisterButton().setVisible(true);
             }
         });
 

@@ -36,4 +36,4 @@ inte att köra eller testa idag. Små ändringar över hela projektet.
 INSERT-queries, allmänna ställen där jag har skrivit fel i SQL-queries, med mera. 
 Att skapa konto samt logga in fungerar nu som det ska. 
 
-25/5: 
+25/5: Skapade och gjorde klart knappar för att skapa en post och för att logga ut. 

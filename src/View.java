@@ -18,7 +18,7 @@ public class View {
     }
 
     public void emptyFeed() {
-        textArea1.setText("");
+        textArea1.setText(null);
     }
 
     public JButton getRegisterButton() {
