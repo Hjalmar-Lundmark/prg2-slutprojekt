@@ -6,6 +6,7 @@ public class register {
     private JPasswordField passwordField1;
     private JPasswordField passwordField2;
     private JButton registerButton;
+    private JTextArea errorArea;
 
     public JPanel getRoot() {
         return root;
@@ -27,10 +28,18 @@ public class register {
         return registerButton;
     }
 
+    public JTextArea getErrorArea() {
+        return errorArea;
+    }
+
     public void emptyPage() {
         textField1.setText("");
         passwordField1.setText("");
         passwordField2.setText("");
+    }
+
+    public void insertError(String e) {
+        errorArea.setText("ERROR: \n" + e);
     }
 
     public static void main(String[] args) {

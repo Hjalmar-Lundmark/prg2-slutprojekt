@@ -8,6 +8,7 @@ public class View {
     private JButton createPostButton;
     private JLabel labelLoggedIn;
     private JButton logoutButton;
+    private JScrollPane scrollBar;
 
     public JPanel getPanel() {
         return root;
@@ -41,5 +42,8 @@ public class View {
         labelLoggedIn.setText(in);
     }
 
-
+    public void scrollToTop() {
+        //scrollBar.getVerticalScrollBar().setValue(0);
+        textArea1.select(0,0);
+    }
 }

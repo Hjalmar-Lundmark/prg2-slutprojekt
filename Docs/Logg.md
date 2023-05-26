@@ -11,7 +11,8 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 | v19  | ^  | ^  |
 | v20  | -  | -  |
 | v21  | ^  | Bli klar kodmässigt  |
-| v22  | skriva PM  | visa upp  |
+| v22  | skriva PM  | GyArb ???  |
+| v23  | ?  | visa upp  |
 
 ## Loggbok
 
@@ -39,3 +40,5 @@ Att skapa konto samt logga in fungerar nu som det ska.
 25/5: Skapade och gjorde klart knappar för att skapa en post och för att logga ut. Nästa lektion ska jag 
 ge ut error i View för när användaren inte kan logga in och sådant. 
 Funderar också på att ändra färger och att färgkoda de olika fönstrarna. 
+
+26/5: 

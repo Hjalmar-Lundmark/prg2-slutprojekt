@@ -42,6 +42,9 @@ public class Model {
         this.username = username;
     }
 
+    public String getError() {
+        return error;
+    }
 
     public void connect() {
         try {
@@ -75,9 +78,9 @@ public class Model {
         return out;
     }
 
-    public void login(String user, String pwd) {
+    public void login(String u, String pwd) {
         error = "";
-        if (user.length() < 2) {
+        if (u.length() < 2) {
             error += "Username is required \n";
         }
         if (pwd.length() < 2) {
@@ -87,16 +90,16 @@ public class Model {
         if (error.length() < 5) { // stops the login if error is found
             try {
                 stmt = conn.createStatement();
-                SQLQuery = "SELECT * FROM hl21users WHERE name='" + user + "'";
+                SQLQuery = "SELECT * FROM hl21users WHERE name='" + u + "'";
                 result = stmt.executeQuery(SQLQuery);
                 result.next();
 
                 //checks if user exist in the db
-                if (Objects.equals(user, result.getString("name"))) {
+                if (Objects.equals(u, result.getString("name"))) {
                     //checks if wrote password and pwd in db is the same
                     if (BCrypt.checkpw(pwd, result.getString("password"))) {
                         loggedIn = true;
-                        username = user;
+                        username = u;
                         userId = result.getInt("id");
                         System.out.println("Login worked");
                     } else {
@@ -118,7 +121,7 @@ public class Model {
 
     public void register(String u, String pwd, String pwdConf) {
         error = "";
-        if (user.length() < 2) {
+        if (u.length() < 2) {
             error += "Username is required \n";
         }
         if (pwd.length() < 8) {

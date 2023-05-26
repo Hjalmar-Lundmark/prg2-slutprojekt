@@ -5,6 +5,7 @@ public class login {
     private JTextField textField1;
     private JPasswordField passwordField1;
     private JButton loginButton;
+    private JTextArea errorArea;
 
     public JPanel getRoot() {
         return root;
@@ -22,9 +23,17 @@ public class login {
         return loginButton;
     }
 
+    public JTextArea getErrorArea() {
+        return errorArea;
+    }
+
     public void emptyPage() {
         textField1.setText("");
         passwordField1.setText("");
+    }
+
+    public void insertError(String e) {
+        errorArea.setText("ERROR: \n" + e);
     }
 
     public static void main(String[] args) {
