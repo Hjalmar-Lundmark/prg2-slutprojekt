@@ -9,4 +9,4 @@ alla Strings som titel, användare, mm och en tidsmarkering. Användaren ska kun
 för att sedan skapa en egen post. Allt det kommer visas i Swing GUI. Om jag har mer tid så kommer jag lägga 
 till fler funktioner. 
 
-Mer info i [Logg.md](./Docs/Logg.md). 
+Mer info i [Logg.md](./Docs/Logg.md) eller [PM.md](./Docs/Logg.md). 
