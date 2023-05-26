@@ -1,8 +1,6 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -112,7 +110,7 @@ public class Controller {
             }
         });
 
-        // Kb listener for some buttons, mouse listener for changing color of logout button on hover ?
+        // Kb listener for send / login buttons
         loginPage.getLoginButton().addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -129,6 +127,66 @@ public class Controller {
 
             }
         });
+        registerPage.getRegisterButton().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    register();
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+        createPostPage.getSendButton().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    createPost();
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
+        // mouse listener for changing color of logout button on hover
+        theView.getLogoutButton().addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                theView.getLogoutButton().setBackground(new Color(255, 97, 97));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                theView.getLogoutButton().setBackground(UIManager.getColor("control"));
+            }
+        });
+
+
 
 
     }

@@ -41,4 +41,4 @@ Att skapa konto samt logga in fungerar nu som det ska.
 ge ut error i View för när användaren inte kan logga in och sådant. 
 Funderar också på att ändra färger och att färgkoda de olika fönstrarna. 
 
-26/5: 
+26/5: Idag har jag fixat så att en error ruta kommer upp när exempelvis användare misslyckas med att logga in. 
