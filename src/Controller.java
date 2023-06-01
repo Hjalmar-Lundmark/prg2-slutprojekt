@@ -255,7 +255,7 @@ public class Controller {
             theView.addPost(posts.get(i).toString());
         }*/
         for (Post i : posts) { //cleaner code, or something
-            theView.addPost(i.toString());
+            theView.addPost(i);
         }
     }
 

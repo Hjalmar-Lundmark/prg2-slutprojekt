@@ -13,7 +13,12 @@ Lärt mig mer om keyListeners och känner att jag förstår dem mer nu.
 
 
 ## Vad har gått mindre bra?
-Jag hade några till ideer att lägga till men det fanns inte tid för dem. Jag funderade på att göra listan med 
-posts till en java-lista av klickbara element som öppnar ett nytt fönster för att se den 
+Jag funderade på att göra listan med posts till en java-lista av klickbara element som öppnar ett 
+nytt fönster för att se den, men först ville jag testa denna metod med en stor textArea och 
+jag gick aldrig tillbaka och testade andra metoden efter det. 
+Jag ville också redigera post-layouten till att åtminstone kunna ändra storlek eller sätta "bold"-fontstil 
+på titeln, men det verkar inte gå att ändra font på olika delar av en textArea och jag blev tvungen 
+att ge upp på det. 
 
 ## idk
+Hade slut ideer. 
