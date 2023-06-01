@@ -11,8 +11,8 @@ GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-sl
 | v19  | ^  | ^  |
 | v20  | -  | -  |
 | v21  | ^  | Bli klar kodmässigt  |
-| v22  | börja skriva PM, artifact?  | GyArb presentation ??? / PM |
-| v23  | ?  | visa upp  |
+| v22  | börja skriva PM, artifact?, göra klart  | PM |
+| v23  | visa upp  | -  |
 
 ## Loggbok
 

@@ -97,16 +97,7 @@ public class Controller {
         theView.getLogoutButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                theModel.setUsername(null);
-                theModel.setUserId(0);
-                theModel.setLoggedIn(false);
-
-                theView.changeUserLabel("Logged out");
-
-                theView.getLogoutButton().setVisible(false);
-                theView.getCreatePostButton().setVisible(false);
-                theView.getLoginButton().setVisible(true);
-                theView.getRegisterButton().setVisible(true);
+                logout();
             }
         });
 
@@ -148,6 +139,73 @@ public class Controller {
             public void keyTyped(KeyEvent e) {
                 if (e.getKeyChar() == KeyEvent.VK_ENTER) {
                     createPost();
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+
+        // Listeners for navbar
+        theView.getLoginButton().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    //opens login view
+                    loginFrame.setVisible(true);
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+        theView.getRegisterButton().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    registerFrame.setVisible(true);
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+        theView.getLogoutButton().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    logout();
+                }
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
+        theView.getCreatePostButton().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+                    createPostFrame.setVisible(true);
                 }
             }
             @Override
@@ -271,6 +329,19 @@ public class Controller {
                 createPostPage.insertError(theModel.getError());
             }
         }
+    }
+
+    public void logout() {
+        theModel.setUsername(null);
+        theModel.setUserId(0);
+        theModel.setLoggedIn(false);
+
+        theView.changeUserLabel("Logged out");
+
+        theView.getLogoutButton().setVisible(false);
+        theView.getCreatePostButton().setVisible(false);
+        theView.getLoginButton().setVisible(true);
+        theView.getRegisterButton().setVisible(true);
     }
 
     public static void main(String[] args) {
