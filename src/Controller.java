@@ -77,7 +77,7 @@ public class Controller {
         loginPage.getLoginButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                login(); // method further down here in controller
+                login(); // method further down
             }
         });
         registerPage.getRegisterButton().addActionListener(new ActionListener() {
@@ -259,6 +259,7 @@ public class Controller {
         }
     }
 
+    // These are needed multiple times, therefore I made them into methods
     public void login() {
         theModel.connect();
         theModel.login(loginPage.getTextField1(), loginPage.getPasswordField1());

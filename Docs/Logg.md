@@ -1,7 +1,8 @@
 # Planering
 GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-slutprojekt?node-id=0%3A1&t=55ccjZPlMn5sCcDZ-1)
 
-[ReadMe.md](../ReadMe.md)
+[ReadMe.md](../ReadMe.md) | [PM.md](./PM.md) 
+
 ## Tidsplanering
 
 |   | Torsdag  | Fredag  |
@@ -51,5 +52,7 @@ Jag la också in en ```MouseListener``` för att skapa en ```hover``` effekt på
 Anledningen till att det är på bara en knapp är att den knappen har ingen melLanhand som en popup eller liknande, 
 utan det är bara en direkt logout. ```Hover```:en är till för att byta färg på knappen när man har 
 muspekaren över den.
+![View v2](./images/start.jpg "View v2")
 
-1/6: 
+1/6: Jag har lagt till några fler KeyListeners för att navigera huvudmenyn(knapparna i toppen) med tabb och enter. 
+
