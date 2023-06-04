@@ -57,3 +57,5 @@ muspekaren över den.
 1/6: Jag har lagt till några fler KeyListeners för att navigera huvudmenyn(knapparna i toppen) med tabb och enter. 
 Samt testade jag olika saker för att få startsidan att se bättre ut men det mesta av det tog jag bort efter då det inte fungerade. 
 Jag började också skriva PM. 
+
+2/6: Sjuk :(
