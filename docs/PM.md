@@ -7,7 +7,7 @@ Forum där användare kan logga in eller skapa konto för att lägga till posts 
 
 ## Vad har gått bra?
 Arbetsgången har gått stadigt framåt och framsteg har gjorts hela tiden. Att skapa dessa funktioner har varit 
-lätt. Allmänt har arbetet gått bra och det finns inte mycket att säga om det(klockan 23 på en söndag med feber). 
+lätt. Allmänt har arbetet gått bra och det finns inte mycket att säga om det(klockan 23.00 på en söndag med feber). 
 
 ## Vad har gått mindre bra?
 Jag funderade på att göra listan med posts till en java-lista av klickbara element som öppnar ett 
