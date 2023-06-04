@@ -2,6 +2,8 @@
 
 Min ide: Fortsättning på databas-login java uppgiften
 
+Sida ligger uppe på [https://hjalmar-lundmark.github.io/prg2-slutprojekt/](https://hjalmar-lundmark.github.io/prg2-slutprojekt/).
+
 GUI ritat ut i [Figma](https://www.figma.com/file/pUN0oFfNOED2i6mp0Zh7OZ/prg2-slutprojekt?node-id=0%3A1&t=55ccjZPlMn5sCcDZ-1)
 
 Alltså en databas som visar posts från ett forum. Posts kommer vara ett eget objekt som innehåller 
